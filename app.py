@@ -318,7 +318,7 @@ if page == 'Dashboard':
                 (axes[1], top_ex_uk, 'Excl. UK', 'Purples_r')
             ]:
                 ax.set_facecolor('white')
-                bars = ax.barh(data.index, data.values, color=plt.cm.get_cmap(color)(np.linspace(0.3, 0.9, len(data))))
+                bars = ax.barh(data.index, data.values, color=plt.colormaps[color](np.linspace(0.3, 0.9, len(data))))
                 for bar, val in zip(bars, data.values):
                     ax.text(val * 1.01, bar.get_y() + bar.get_height()/2, f'{val:,}', va='center', fontsize=7, color='#374151', fontweight='600')
                 ax.set_title(title, fontsize=10, fontweight='bold', color='#111827', pad=8)
@@ -339,7 +339,7 @@ if page == 'Dashboard':
             fig.patch.set_facecolor('white')
             ax.set_facecolor('white')
             top_products = df.groupby('Description')['Quantity'].sum().sort_values(ascending=False).head(10)
-            colors = plt.cm.Greens(np.linspace(0.4, 0.9, len(top_products)))[::-1]
+            colors = plt.colormaps['Greens'](np.linspace(0.4, 0.9, len(top_products)))[::-1]
             bars = ax.barh(top_products.index, top_products.values, color=colors)
             for bar, val in zip(bars, top_products.values):
                 ax.text(val * 1.01, bar.get_y() + bar.get_height()/2, f'{val:,}', va='center', fontsize=8, color='#374151', fontweight='600')
@@ -413,7 +413,7 @@ if page == 'Dashboard':
         fig.patch.set_facecolor('white')
         ax.set_facecolor('white')
         top_customers = df.groupby('CustomerID')['TotalPrice'].sum().sort_values(ascending=False).head(10)
-        colors = plt.cm.RdPu(np.linspace(0.4, 0.85, len(top_customers)))
+        colors = plt.colormaps['RdPu'](np.linspace(0.4, 0.85, len(top_customers)))
         bars = ax.bar([str(c) for c in top_customers.index], top_customers.values, color=colors, width=0.6, edgecolor='white')
         for bar, val in zip(bars, top_customers.values):
             ax.text(bar.get_x() + bar.get_width()/2, val + 2000, f'£{val/1000:.0f}K', ha='center', fontsize=9, color='#374151', fontweight='700')
