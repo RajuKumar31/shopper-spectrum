@@ -2,6 +2,8 @@
 
 An end-to-end data analytics project that analyses 392,000+ online retail transactions to segment customers using RFM analysis and KMeans clustering, and recommend products using item-based collaborative filtering. Built with Python, scikit-learn, and Streamlit.
 
+**🚀 Live Demo:** [shopper-spectrum-4jn3ernyuguqf6le2zrxhi.streamlit.app](https://shopper-spectrum-4jn3ernyuguqf6le2zrxhi.streamlit.app/)
+
 ---
 
 ## 📌 Project Overview

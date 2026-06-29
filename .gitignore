@@ -1,2 +1,1 @@
-product_similarity.csv
-online_retail.csv
+echo "" > .gitignore
